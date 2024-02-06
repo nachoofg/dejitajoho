@@ -2,7 +2,7 @@ import { cpuCurrentSpeed, cpuTemperature, cpu, currentLoad } from 'systeminforma
 
 export async function CPU() {
     return {
-        CPU_Usage: (await currentLoad()).currentLoad,
+        CPU_Usage: (await currentLoad()).currentLoad.toFixed(0),
         CPU_speed: (await cpuCurrentSpeed()).avg,
         CPU_cores: (await cpu()).cores,
         CPU_temp: (await cpuTemperature()).main,
